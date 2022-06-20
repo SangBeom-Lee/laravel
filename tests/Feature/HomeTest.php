@@ -13,7 +13,7 @@ class HomeTest extends TestCase
         $response                                           = $this->get('/home');
         $response->assertStatus(200);
     }
-
+        
     public function testBody()
     {
         $response                                           = $this->get('/home');
