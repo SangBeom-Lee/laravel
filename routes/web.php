@@ -44,3 +44,15 @@ Route::post('/login', [App\Http\Controllers\LoginController::class, 'authenticat
 Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])
     ->middleware('auth')
     ->name('logout');
+
+/* 게시판 */
+Route::get('/board/{id}', [App\Http\Controllers\BoardController::class, 'index'])
+    ->name('board');
+
+Route::get('/board/{id}/write', [App\Http\Controllers\BoardController::class, 'write'])
+    ->middleware(('auth'))
+    ->name('board');
+
+Route::get('/board/{id}/modify', [App\Http\Controllers\BoardController::class, 'write'])
+    ->middleware(('auth'))
+    ->name('board');

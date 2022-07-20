@@ -20,6 +20,7 @@ class RegisterController extends Controller
     // 회원가입 완료
     public function store(Request $request)
     {
+        // 필수문구 체크
         $request->validate([
             'name'                                          => 'required|string|max:255',
             'email'                                         => 'required|string|email|max:255|unique:users',
