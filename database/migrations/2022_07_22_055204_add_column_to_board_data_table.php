@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('board_data', function (Blueprint $table) {
-            $table->id();
+        Schema::table('board_data', function (Blueprint $table) {
             $table->string('board_name');
-            $table->string('title');
-            $table->text('content');
-            $table->string('name');
-            $table->timestamps();
         });
     }
 
@@ -30,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('board_data');
+        Schema::table('board_data', function (Blueprint $table) {
+            //
+        });
     }
 };

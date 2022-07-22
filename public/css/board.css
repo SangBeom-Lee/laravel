@@ -1931,7 +1931,8 @@ button,
   background-color: #f5f6f7;
   font-size: 0.9em;
   position: relative;
-  width: 26em; }
+  width: 26em; 
+}
   #sidebar h2 {
     font-size: 1.38889em; }
   #sidebar > .inner {
@@ -2109,11 +2110,7 @@ button,
 
 /* Banner */
 #banner {
-  padding: 6em 0 4em 0 ;
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex; }
+  padding: 6em 0 4em 0 ;}
   #banner h1 {
     margin-top: -0.125em; }
   #banner .content {
@@ -2149,6 +2146,16 @@ button,
       -ms-object-position: center;
       object-position: center;
       width: 100%; }
+
+#banner .paginationBox {
+
+}
+#banner .paginationBox > nav > div:first-child {
+    display: none;
+}
+#banner .paginationBox > nav > div:nth-child(2) > div:first-child {
+    display: none;
+}
   @media screen and (orientation: portrait) {
     #banner {
       -moz-flex-direction: column-reverse;
@@ -2271,3 +2278,5 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+
+
