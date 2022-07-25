@@ -2156,6 +2156,20 @@ button,
 #banner .paginationBox > nav > div:nth-child(2) > div:first-child {
     display: none;
 }
+#banner .paginationBox > nav > div:nth-child(2) > div:nth-child(2) > span > span, #banner .paginationBox > nav > div:nth-child(2) > div:nth-child(2) > span > a {
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  line-height: 16px;
+  border-bottom: unset;
+}
+#banner .paginationBox > nav > div:nth-child(2) > div:nth-child(2) > span > span svg, #banner .paginationBox > nav > div:nth-child(2) > div:nth-child(2) > span > a svg {
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  line-height: 16px;
+  border-bottom: unset;
+}
   @media screen and (orientation: portrait) {
     #banner {
       -moz-flex-direction: column-reverse;

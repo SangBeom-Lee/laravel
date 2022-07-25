@@ -6,6 +6,8 @@
 		<link rel="stylesheet" type="text/css" href="/css/board.css">
 @endsection
 
+@section('page_title', '공지사항')
+
 @section('content')
 		<div>
 				<table>
@@ -19,7 +21,7 @@
 									<tr>
 											<td>{{ $row->id }}</td>
 											<td>{{ $row->title }}</td>
-											<td></td>
+											<td>{{ $row->created_at }}</td>
 									</tr>
 							@endforeach
 					</tbody>
