@@ -28,4 +28,20 @@ class BoardController extends Controller
     {
         return view('board.write');
     }
+
+    public function view(Request $request)
+    {
+        $param                                              = explode("/", $request->path());
+        $board_id                                           = $param[2];
+
+        $board_name                                         = "notice";
+        $board_config                                       = DB::table('board')->where('title', $board_name);
+        $board_data                                         = DB::table('board_data')->find($board_id);
+
+        return view('board.view', array(
+            'name'                                          => $board_name,
+            'config'                                        => $board_config,
+            'data'                                          => $board_data
+        ));  
+    }
 }

@@ -20,7 +20,7 @@
 							@foreach ($data as $row)
 									<tr>
 											<td>{{ $row->id }}</td>
-											<td>{{ $row->title }}</td>
+											<td><a href="/board/{{ $name }}/{{ $row->id }}">{{ $row->title }}</a></td>
 											<td>{{ $row->created_at }}</td>
 									</tr>
 							@endforeach

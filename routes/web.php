@@ -46,13 +46,16 @@ Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])
     ->name('logout');
 
 /* 게시판 */
-Route::get('/board/{id}', [App\Http\Controllers\BoardController::class, 'index'])
+Route::get('/board/{item}', [App\Http\Controllers\BoardController::class, 'index'])
     ->name('board');
 
-Route::get('/board/{id}/write', [App\Http\Controllers\BoardController::class, 'write'])
+Route::get('/board/{item}/write', [App\Http\Controllers\BoardController::class, 'write'])
     ->middleware(('auth'))
     ->name('board');
 
-Route::get('/board/{id}/modify', [App\Http\Controllers\BoardController::class, 'write'])
+Route::get('/board/{item}/modify', [App\Http\Controllers\BoardController::class, 'write'])
     ->middleware(('auth'))
+    ->name('board');
+    
+Route::get('/board/{item}/{id}', [App\Http\Controllers\BoardController::class, 'view'])
     ->name('board');
