@@ -46,16 +46,24 @@ Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])
     ->name('logout');
 
 /* 게시판 */
-Route::get('/board/{item}', [App\Http\Controllers\BoardController::class, 'index'])
-    ->name('board');
+Route::get('/board/{board_name}', [App\Http\Controllers\BoardController::class, 'index'])
+    ->name('board_list');
 
-Route::get('/board/{item}/write', [App\Http\Controllers\BoardController::class, 'write'])
+Route::get('/board/{board_name}/write', [App\Http\Controllers\BoardController::class, 'write'])
     ->middleware(('auth'))
-    ->name('board');
+    ->name('board_write');
 
-Route::get('/board/{item}/modify', [App\Http\Controllers\BoardController::class, 'write'])
+Route::get('/board/{board_name}/modify', [App\Http\Controllers\BoardController::class, 'write'])
     ->middleware(('auth'))
-    ->name('board');
+    ->name('board_modify');
     
-Route::get('/board/{item}/{id}', [App\Http\Controllers\BoardController::class, 'view'])
-    ->name('board');
+Route::get('/board/{board_name}/{id}', [App\Http\Controllers\BoardController::class, 'view'])
+    ->name('board_view');
+
+/* 게시판 POST 처리 */
+Route::post('/board/{board_name}/save/', [App\Http\Controllers\BoardController::class, 'postSave'])
+    ->name('board_save');
+Route::post('/board/{board_name}/update/{id}', [App\Http\Controllers\BoardController::class, 'postEdit'])
+    ->name('board_edit');
+Route::post('/board/{board_name}/del/{id}', [App\Http\Controllers\BoardController::class, 'postDel'])
+    ->name('board_del');

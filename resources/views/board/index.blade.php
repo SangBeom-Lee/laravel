@@ -31,6 +31,10 @@
 		<div class="paginationBox">
 				{{ $data->links() }}
 		</div>
+		
+		<div>
+				<a href="{{ $name }}/write">글쓰기</a>
+		</div>
 @endsection
 
 

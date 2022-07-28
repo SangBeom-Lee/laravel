@@ -55,7 +55,8 @@
 										<li>
 											<span class="opener">Board</span>
 											<ul>
-												<li><a href="/board/notice">Notice</a></li>
+												<li><a href="/board/notice">공지사항</a></li>
+												<li><a href="/board/free">자유게시판</a></li>
 											</ul>
 										</li>
 									</ul>
