@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Models\Board;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use PhpParser\Node\Expr\Cast\Object_;
 
 class BoardController extends Controller
 {
@@ -30,8 +32,12 @@ class BoardController extends Controller
     // 게시글 작성 및 수정
     public function write()
     {
-        echo "123";exit;
-        return view('board.write');
+        $_Board                                             = new Board();
+        $data                                               = $_Board->getBaseBoardData();
+
+        return view('board.write', array(
+            'data'                                          => $data
+        ));
     }
 
     // 게시글 보기
